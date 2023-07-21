@@ -1,16 +1,27 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
+import Artists from "./pages/Artists";
+import NotFound from "./pages/NotFound";
+import Layout from "./components/Layout";
 
-// First we need to configure our routes.
-// We use createBrowserRouter() to create a router with a list of routes.
 const router = createBrowserRouter([
   {
-    path: "/", element: <Home />,
+    path: "/", element: <Layout />,
+    children: [
+      {
+        path: "/", element: <Home />,
+      },
+      {
+        path: "/artists", element: <Artists />,
+      },
+      {
+        path: "*", element: <NotFound />,
+      },
+    ]
   },
 ]);
 
-// And with the RouterProvider we inject our routes to our App
-export default function App() {
+export default function App(): JSX.Element {
   return (
     <RouterProvider router={router} />
   );
