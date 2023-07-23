@@ -13,9 +13,9 @@
     --bg-light: #c8c8c8;
     --txt-light: #242424;
     --accent-dark: #7fffd4;
-    --accent-dark-hover: #adff2f;
+    --accent-dark-hover: #ff8d2f;
     --accent-light: #00c080;
-    --accent-light-hover: #5d9c00;
+    --accent-light-hover: #cb5b00;
 
     color-scheme: light dark;
     color: var(--txt-dark);
@@ -70,6 +70,12 @@ body {
 h1 {
     font-size: 3.2em;
     line-height: 1.1;
+}
+
+nav {
+    a:is(:hover, :active, .active) {
+        color: var(--accent-dark-hover);
+    }
 }
 
 #root {

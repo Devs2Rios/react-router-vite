@@ -5,7 +5,7 @@ export default function Nav() {
         <nav>
             <ul className="mx-auto font-medium flex items-center justify-center gap-3 p-4 list-none list-inside">
                 <li>
-                    <NavLink to="/" className="block" aria-current="page">Home</NavLink>
+                    <NavLink to="/" className={({ isActive }) => isActive ? 'active' : undefined} aria-current="page">Home</NavLink>
                 </li>
                 <li>
                     <NavLink to="/artists" className="block" aria-current="page">Artists</NavLink>
